@@ -1,4 +1,5 @@
 let color = "black";
+let click = false;
 
 function createBoard(size) {
   let board = document.querySelector(".board");
@@ -17,6 +18,12 @@ function createBoard(size) {
 
 document.addEventListener("DOMContentLoaded", function () {
   createBoard(32);
+
+  document.querySelector("body").addEventListener("click", function (e) {
+    if (e.target.tagName != "Button") {
+      click = !click;
+    }
+  });
 
   let btn_popup = document.querySelector("#popup");
   btn_popup.addEventListener("click", function () {
@@ -39,13 +46,20 @@ function getSize() {
 }
 
 function colorDiv() {
-  if (color == "random") {
-    this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-  } else {
-    this.style.backgroundColor = "black";
+  if (click) {
+    if (color == "random") {
+      this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    } else {
+      this.style.backgroundColor = "black";
+    }
   }
 }
 
 function setColor(colorChoice) {
   color = colorChoice;
+}
+
+function resetBtn() {
+  let divs = document.querySelectorAll("div");
+  divs.forEach((div) => (div.style.backgroundColor = "white"));
 }
