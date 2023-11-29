@@ -1,65 +1,11 @@
-let color = "black";
-let click = false;
+const output = document.querySelector(".container");
+const box = document.querySelector(".box");
 
-function createBoard(size) {
-  let board = document.querySelector(".board");
-
-  board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-  board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
-
-  let numDivs = size * size;
-
-  for (let i = 0; i < numDivs; i++) {
+function row() {
+  for (let i = 0; i < 16; i++) {
     let div = document.createElement("div");
-    div.addEventListener("mouseover", colorDiv);
-    board.insertAdjacentElement("beforeend", div);
+    div.classList.add("row");
+    box.appendChild(div);
   }
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-  createBoard(32);
-
-  document.querySelector("body").addEventListener("click", function (e) {
-    if (e.target.tagName != "Button") {
-      click = !click;
-    }
-  });
-
-  let btn_popup = document.querySelector("#popup");
-  btn_popup.addEventListener("click", function () {
-    let size = getSize();
-    createBoard(size);
-  });
-});
-
-function getSize() {
-  let input = prompt("What size do you want the board");
-  let message = document.querySelector("#message");
-  if (input === "") {
-    message.innerHTML = "please provide a number";
-  } else if (input < 0 || input > 100) {
-    message.innerHTML = "Provide a number between 1 and 100";
-  } else {
-    message.innerHTML = "now you can play";
-  }
-  return input;
-}
-
-function colorDiv() {
-  if (click) {
-    if (color == "random") {
-      this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-    } else {
-      this.style.backgroundColor = "black";
-    }
-  }
-}
-
-function setColor(colorChoice) {
-  color = colorChoice;
-}
-
-function resetBtn() {
-  let divs = document.querySelectorAll("div");
-  divs.forEach((div) => (div.style.backgroundColor = "white"));
-}
+row();
