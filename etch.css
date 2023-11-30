@@ -1,24 +1,22 @@
-* {
-  padding: 0;
-  margin: 10;
+body {
+  height: 98vh;
 }
 
 .container{
-height: 89vh;
-width: 100wh;
-display: flex;
-justify-content: center;
-align-items: center;
-}
-
-.box{
-  border: 2px solid black;
-  height: 50%;
+  height: 98vh;
+  margin-left: 290px;
   width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+
 }
 
 .row{
-  padding: 10px;
-  border: 2px solid black;
-  background-color: aquamarine;
+  border:1px solid rgb(5, 5, 14);
+  width: 30px;
+  height: 30px;
+  background-color: lightblue;
 }

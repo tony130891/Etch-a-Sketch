@@ -1,11 +1,10 @@
-const output = document.querySelector(".container");
-const box = document.querySelector(".box");
+const container = document.querySelector(".container");
 
 function row() {
-  for (let i = 0; i < 16; i++) {
+  for (let i = 0; i < 273; i++) {
     let div = document.createElement("div");
     div.classList.add("row");
-    box.appendChild(div);
+    container.appendChild(div);
   }
 }
 row();
