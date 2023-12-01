@@ -4,14 +4,13 @@ body {
 
 .container{
   height: 98vh;
-  margin-left: 290px;
-  width: 50%;
+  margin-left: 230px;
+  width: 760px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
-
 }
 
 .row{
@@ -19,4 +18,19 @@ body {
   width: 30px;
   height: 30px;
   background-color: lightblue;
+}
+
+.changed {
+  border: 1px solid rgb(5, 5, 14);
+  width: 30px;
+  height: 30px;
+  background-color: red;
+}
+
+main{
+position: absolute;
+top: 10%;
+right: 47%;
+transform: translateY(-50%);
+transform: translateY(-50%);
 }
