@@ -17,14 +17,13 @@ body {
   border:1px solid rgb(5, 5, 14);
   width: 30px;
   height: 30px;
-  background-color: lightblue;
+  background-color: white;
 }
 
 .changed {
   border: 1px solid rgb(5, 5, 14);
   width: 30px;
   height: 30px;
-  background-color: red;
 }
 
 main{
